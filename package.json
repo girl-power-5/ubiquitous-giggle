@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "ubiquitous-giggle",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/girl-power-5/ubiquitous-giggle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/girl-power-5/ubiquitous-giggle/issues"
+  },
+  "homepage": "https://github.com/girl-power-5/ubiquitous-giggle#readme"
+}
