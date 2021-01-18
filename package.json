@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/girl-power-5/ubiquitous-giggle/issues"
   },
-  "homepage": "https://github.com/girl-power-5/ubiquitous-giggle#readme"
+  "homepage": "https://github.com/girl-power-5/ubiquitous-giggle#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
