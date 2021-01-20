@@ -13,7 +13,8 @@ var db = require("./models");
 var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("./public/assets"));
+//here should reference the folder path as "public"
+app.use(express.static("public"));
 
 // Tell our express app to use handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
