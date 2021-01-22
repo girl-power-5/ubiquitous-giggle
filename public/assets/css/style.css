@@ -1,0 +1,10 @@
+.day-1, .day-2, .day-3, .day-4, .day-5  {
+    background-color: blue;
+    padding-top: 25px;
+    color: #FFF;
+    font-weight: bolder;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    margin-right: 5px;
+}
