@@ -11,6 +11,14 @@ module.exports = function (app) {
     res.render("signup");
   });
 
+  app.get("/dashboard", function (req, res) {
+    res.render("dashboard");
+  });
+  
+  app.get("/newprofile", function (req, res) {
+    res.render("newprofile");
+  });
+
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
