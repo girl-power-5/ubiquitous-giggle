@@ -1,7 +1,7 @@
 // Requiring our models and passport 
 var db = require("../models");
 var passport = require("../config/passport");
-
+console.log("passport!!!!", passport)
 module.exports = function (app) {
   app.get("/", function (req, res) {
     res.render("index");
@@ -12,7 +12,7 @@ module.exports = function (app) {
   });
 
   app.get("/dashboard", function (req, res) {
-    res.render("dashboard");
+    res.render("dashboard"); 
   });
   
   app.get("/newprofile", function (req, res) {
@@ -21,6 +21,7 @@ module.exports = function (app) {
 
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
+    console.log("req.user ", req.user)
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -59,4 +60,10 @@ module.exports = function (app) {
       });
     }
   });
+
+  app.post("/api/newprofile", function(req, res) {
+    db.Profile.create({
+
+    })
+  })
 };
