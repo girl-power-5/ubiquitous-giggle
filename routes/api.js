@@ -1,7 +1,7 @@
 // Requiring our models and passport 
 var db = require("../models");
 var passport = require("../config/passport");
-console.log("passport!!!!", passport)
+
 module.exports = function (app) {
   app.get("/", function (req, res) {
     res.render("index");
@@ -11,8 +11,16 @@ module.exports = function (app) {
     res.render("signup");
   });
 
-  app.get("/dashboard", function (req, res) {
-    res.render("dashboard"); 
+  app.get("/dashboard/:id", function (req, res) {
+    db.Profile.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    }).then(function(data) {
+      console.log("data", data)
+      // Need to work on getting individual profile data to display on user dashboard
+      res.render("dashboard", {}); 
+    })
   });
   
   app.get("/newprofile", function (req, res) {
@@ -20,8 +28,9 @@ module.exports = function (app) {
   });
 
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
+
+    // Send back information about the user currently logged in
     res.json(req.user);
-    console.log("req.user ", req.user)
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -61,9 +70,16 @@ module.exports = function (app) {
     }
   });
 
+  // POST method for adding a new profile to a user's account/dashboard
   app.post("/api/newprofile", function(req, res) {
+    console.log("hellooooooo", req)
     db.Profile.create({
-
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      relationship: req.body.relationship,
+      UserId: req.user.id
+    }).then(function() {
+      res.json(req.user);
     })
   })
 };
