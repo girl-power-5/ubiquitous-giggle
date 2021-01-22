@@ -3,35 +3,33 @@ $(document).ready(function() {
   var profileForm = $("form.profile");
   var firstName = $("input#first-name");
   var lastName = $("input#last-name");
-  var relationship = $("#relationship.value");
-
-
+  var relationship = $("#relationship").val();
 
   // On submit, send the user input to the /api/newprofile route using a POST method
   profileForm.on("submit", function(event) {
     event.preventDefault();
 
+    // Capture the user input and trim off any white space
     var profileData = {
       first_name: firstName.val().trim(),
       last_name: lastName.val().trim(),
-      relationship: relationship.val().trim(),
+      relationship: relationship.trim(),
     };
 
-    $.get("/api/user_data").then(function(data) {
-      var UserId = data.id;
-
-      createNewProfile(profileData.first_name, profileData.last_name, profileData.relationship, UserId);
-    });
+    // Call the function we created below that initiates a POST method to the db
+      createNewProfile(profileData.first_name, profileData.last_name, profileData.relationship);
   });
 
-  function createNewProfile(first_name, last_name, relationship, UserId) {
+  // Create a function to hold the data we will send a POST request
+  function createNewProfile(first_name, last_name, relationship) {
     $.post("/api/newprofile", {
       first_name: first_name,
       last_name: last_name,
-      relationship: relationship,
-      UserId: UserId
-    }).then(function(data) {
-      window.location.replace("/dashboard")
+      relationship: relationship
+      
+      // Redirect the user to their dashboard after they create a new profile
+    }).then(function(res) {
+      window.location.replace("/dashboard/" + res.id)
     })
   };
 

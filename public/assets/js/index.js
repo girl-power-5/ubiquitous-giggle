@@ -1,7 +1,7 @@
 //Keeping to check functionality 
 console.log("Hello World")
 
-// wk 14, 02-HW, Develop → public → js → login.js into our index.
+
 $(document).ready(function() {
   // Getting references to our form and inputs
   var loginForm = $("form.login");
@@ -19,7 +19,6 @@ $(document).ready(function() {
     if (!userData.email || !userData.password) {
       return;
     }
-
     // If we have an email and password we run the loginUser function and clear the form
     loginUser(userData.email, userData.password);
     emailInput.val("");
@@ -32,9 +31,9 @@ $(document).ready(function() {
       email: email,
       password: password
     })
-      .then(function() {
-
-        window.location.replace("/dashboard");
+      .then(function(res) {
+        console.log(res)
+        window.location.replace("/dashboard/" + res.id);
         // If there's an error, log the error
       })
       // .catch(function(err) {
