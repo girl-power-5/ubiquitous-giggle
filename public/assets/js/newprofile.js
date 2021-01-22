@@ -3,7 +3,8 @@ $(document).ready(function() {
   var profileForm = $("form.profile");
   var firstName = $("input#first-name");
   var lastName = $("input#last-name");
-  var relationship = $("#relationship").val();
+   // we had a .val here which was setting the variable to nothing, and was not grabbing the correct element. 
+  var relationship = $("#relationship");
 
   // On submit, send the user input to the /api/newprofile route using a POST method
   profileForm.on("submit", function(event) {
@@ -13,7 +14,7 @@ $(document).ready(function() {
     var profileData = {
       first_name: firstName.val().trim(),
       last_name: lastName.val().trim(),
-      relationship: relationship.trim(),
+      relationship: relationship.val()
     };
 
     // Call the function we created below that initiates a POST method to the db
