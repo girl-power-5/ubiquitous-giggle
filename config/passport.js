@@ -39,6 +39,7 @@ passport.use(new LocalStrategy(
 // Just consider this part boilerplate needed to make it all work
 passport.serializeUser(function(user, cb) {
   cb(null, user);
+  console.log("user ", user.id)
 });
 
 passport.deserializeUser(function(obj, cb) {
