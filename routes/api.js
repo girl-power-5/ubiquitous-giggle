@@ -12,9 +12,11 @@ module.exports = function(app) {
     res.render("signup");
   });
 
-  app.get("/newevent", function(req, res) {
-    res.render("newevent");
+  app.get("/newevent/:profileID", function(req, res) {
+    var selectedProfile = req.params.profileID;
+    res.render("newevent", {profileID: selectedProfile});
   });
+
 
   app.get("/newprofile", function(req, res) {
     res.render("newprofile");
@@ -66,7 +68,8 @@ module.exports = function(app) {
           relationship: data.relationship,
           birthday: data.birthday,
           email: data.email,
-          phoneNumber: data.phone_number
+          phoneNumber: data.phone_number,
+          id: selected
         }
 
         res.render("view", {profile: individualProfile})      
@@ -126,6 +129,27 @@ module.exports = function(app) {
     }).then(function() {
       res.json(req.user);
     })
-  })
+  });
+
+  app.post("/api/newevent/:profileID", function(req ,res) {
+    console.log("backend new event req ", req.body);
+    //Profile.findByPrimary().then()
+    db.Event.create({
+      type: req.body.type,
+      name: req.body.name,
+      start_date: req.body.start_date,
+      profiles: [
+        {id: req.params.id}
+      ]
+    }, {
+      include: [{
+        association: db.Profile,
+        //include: [ db.Profile ]
+      }]
+    }
+    ).then(function([event, profile]) {
+      res.json(req.user);
+    });
+  });
 
 };
