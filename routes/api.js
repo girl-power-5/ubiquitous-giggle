@@ -17,9 +17,20 @@ module.exports = function (app) {
         UserId: req.user.id
       }
     }).then(function(data) {
-      console.log("data", data)
-      // Need to work on getting individual profile data to display on user dashboard
-      res.render("dashboard", {}); 
+
+      var profileData = {
+      }
+      
+      for (let i =0; i<data.length; i++) {
+        profileData[i] = {
+          firstName: data[i].first_name,
+          lastName: data[i].last_name,
+          relationship: data[i].relationship
+        }
+      }
+ 
+      res.render("dashboard", {profile: profileData})      
+
     })
   });
   
