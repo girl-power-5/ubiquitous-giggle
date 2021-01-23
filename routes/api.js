@@ -20,6 +20,10 @@ module.exports = function(app) {
     res.render("newprofile");
   });
 
+  app.get("/editprofile", function(req, res) {
+    res.render("editprofile");
+  });
+
   // Route to get all of the user's profiles and render to their main page after logging in
   app.get("/dashboard/:id", function(req, res) {
     db.Profile.findAll({
