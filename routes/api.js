@@ -2,16 +2,26 @@
 var db = require("../models");
 var passport = require("../config/passport");
 
-module.exports = function (app) {
-  app.get("/", function (req, res) {
+module.exports = function(app) {
+  // Using handlebars to render static html pages...
+  app.get("/", function(req, res) {
     res.render("index");
   });
   
-  app.get("/signup", function (req, res) {
+  app.get("/signup", function(req, res) {
     res.render("signup");
   });
 
-  app.get("/dashboard/:id", function (req, res) {
+  app.get("/newevent", function(req, res) {
+    res.render("newevent");
+  });
+
+  app.get("/newprofile", function(req, res) {
+    res.render("newprofile");
+  });
+
+  // Route to get all of the user's profiles and render to their main page after logging in
+  app.get("/dashboard/:id", function(req, res) {
     db.Profile.findAll({
       where: {
         UserId: req.user.id
@@ -23,6 +33,7 @@ module.exports = function (app) {
       
       for (let i =0; i<data.length; i++) {
         profileData[i] = {
+          id: data[i].id,
           firstName: data[i].first_name,
           lastName: data[i].last_name,
           relationship: data[i].relationship
@@ -33,12 +44,32 @@ module.exports = function (app) {
 
     })
   });
-  
-  app.get("/newprofile", function (req, res) {
-    res.render("newprofile");
+ 
+  // Route to get an individual profile and render it to user's page
+  app.get("/view/:profileID", function(req, res) {
+
+    var selected = req.params.profileID
+    console.log('req params ', req.params.profileID)
+    console.log(selected)
+    db.Profile.findOne({
+      where: {
+        id: selected
+      }
+      }).then(function(data) {
+        var individualProfile = {
+          firstName: data.first_name,
+          lastName: data.last_name,
+          relationship: data.relationship,
+          birthday: data.birthday,
+          email: data.email,
+          phoneNumber: data.phone_number
+        }
+
+        res.render("view", {profile: individualProfile})      
+      })
   });
 
-  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
 
     // Send back information about the user currently logged in
     res.json(req.user);
@@ -47,7 +78,7 @@ module.exports = function (app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", function (req, res) {
+  app.post("/api/signup", function(req, res) {
     db.User.create({
       email: req.body.email,
       password: req.body.password
@@ -61,13 +92,13 @@ module.exports = function (app) {
   });
 
   // Route for logging user out
-  app.get("/logout", function (req, res) {
+  app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
   });
 
   // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", function (req, res) {
+  app.get("/api/user_data", function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
@@ -83,7 +114,6 @@ module.exports = function (app) {
 
   // POST method for adding a new profile to a user's account/dashboard
   app.post("/api/newprofile", function(req, res) {
-    console.log("hellooooooo", req)
     db.Profile.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
@@ -93,4 +123,5 @@ module.exports = function (app) {
       res.json(req.user);
     })
   })
+
 };
