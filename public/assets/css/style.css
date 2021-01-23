@@ -11,32 +11,30 @@ h4 {
     width: 100%;
 }
 
-/* newprofile css below */
+/*new profile css*/
 * {
-    box-sizing: border-box;
-    padding: 3px;
-   
-  }
+  padding: 3px;
+}
+.new_container{
+  border-radius: 25px;
+  border: 2px solid	rgb(208,208,208);
+  background-color:rgb(255, 255, 255) ;
+  padding: 20px; 
+  width: 600px;
+  height: 800px;  
+  margin: auto;
+  font-size: 17px;
+  position: relative;
+  text-align: left
   
-  /* Create two equal columns that floats next to each other */
-  .column {
-    float: left;
-    width: 50%;
-    padding: 30px;
-   
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-    }
-  }
-  /*
+};
+
+.relationship, .birthday{
+text-align: left;
+
+}
+
+h1,h2 {
+ text-align: center;
+
+}
