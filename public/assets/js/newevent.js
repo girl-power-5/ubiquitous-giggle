@@ -2,7 +2,7 @@ $(document).ready(function() {
   var eventOptions = $(".event-options");
   var holidayOptions = $("#holidays");
   var specialOccasionOptions = $("#special");
-  var createEventBtn =  $("#create-event-btn");
+  var createEventBtn =  $(".create-event-btn");
 
   var selected;
   var eventName;
@@ -43,10 +43,10 @@ $(document).ready(function() {
   $(".create-event-btn").on("click", function(event) {
     event.preventDefault();
 
-    var profileID = createEventBtn.attr("data-id")
-    var eventDate = $("#event-date").val();
+    var profileID = createEventBtn.attr("data-id");
 
-    console.log("NEED TO DO THIS STILL")
+    console.log(profileID)
+    var eventDate = $("#event-date").val();
     
     $.post("/api/newevent/" + profileID, {
       type: selected,

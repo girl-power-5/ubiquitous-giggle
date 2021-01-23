@@ -17,8 +17,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.DATEONLY
       },
       is_annual: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false
+        type: DataTypes.BOOLEAN
       },
     });
     Event.associate = function(models) {
