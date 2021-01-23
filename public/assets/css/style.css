@@ -27,9 +27,6 @@ h4 {
   font-size: 17px;
   position: relative;
   text-align: left
-
-    box-sizing: border-box;
-    padding: 3px;
    
   }
   
@@ -51,9 +48,6 @@ h4 {
   .hide {
     display: none;
   }
-
-  
-};
 
 .relationship, .birthday{
 text-align: left;
