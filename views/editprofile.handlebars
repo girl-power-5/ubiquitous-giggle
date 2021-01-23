@@ -1,0 +1,89 @@
+<style>
+ * {
+   box-sizing: border-box;
+   padding: 3px;
+ }
+ 
+ /* Create two equal columns that floats next to each other */
+ .column {
+   float: left;
+   width: 50%;
+   padding: 10px;
+ }
+ 
+ /* Clear floats after the columns */
+ .row:after {
+   content: "";
+   display: table;
+   clear: both;
+ }
+ 
+ /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+ @media screen and (max-width: 600px) {
+   .column {
+     width: 100%;
+   }
+ }
+ </style>
+ 
+ <!--  -->
+ 
+ <div class="row">
+   <div class="column" style="background-color;">
+     <h2>Import new profile</h2>
+   </div>
+ 
+ 
+   <div class="column" style="background-color;">
+     <h2>Edit profile or add events</h2>
+     <form class="edit"> 
+         <div class="edit_container">
+          
+         <label>Anniversary
+             </label>
+             <select name="anniversary" id="anniversary">
+             <option value="need calendar">need calendar</option>   
+             <option value="placeholder">placeholder</option>
+             </select>
+         <br>
+          <label>Annual Holidays
+             </label>
+             <select name="holiday" id="holiday">
+             <option value="need calendar">need calendar</option>
+             <option value="placeholder">placeholder</option>
+             </select>
+         <br>
+         <label>Special Occasions:
+             </label>
+             <select name="special" id="special">
+             <option value=""></option>  
+             <option value="Wedding">Wedding</option>
+             <option value="Engagement">Engagement</option>
+             <option value="Divorce">Divorce</option>
+             <option value="Graduation">Graduation</option>
+             <option value="Just beacuse">Just because</option>
+             <option value="Religious ceremony">Religious ceremony</option>
+             <option value="Promotion">Promotion</option> 
+             <option value="Baby Shower">Baby Shower</option> 
+             </select>
+         </label>
+     <br>
+     <br>
+     
+        <div
+        class=" d-flex align-items-center justify-content-center">
+       <button type="button" class="btn btn-outline-secondary">Save</button>
+      </div>
+      
+      <div
+        class=" d-flex align-items-center justify-content-center">
+      <button type="submit" class="btn btn-outline-secondary">View Dashboard</button>
+      </div>
+      
+       </div>
+     </div> 
+    
+     
+     <script src="assets/js/editprofile.js"></script>
+   </div>
+ </div>
