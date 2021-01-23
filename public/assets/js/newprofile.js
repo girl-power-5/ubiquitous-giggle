@@ -1,8 +1,8 @@
 $(document).ready(function() {
   // Capture the user input from create profile form
   var profileForm = $("form.profile");
-  var firstName = $("input#first-name");
-  var lastName = $("input#last-name");
+  var firstName = $("input.first-name");
+  var lastName = $("input.last-name");
    // we had a .val here which was setting the variable to nothing, and was not grabbing the correct element. 
   var relationship = $("#relationship");
 
@@ -12,8 +12,8 @@ $(document).ready(function() {
 
     // Capture the user input and trim off any white space
     var profileData = {
-      first_name: firstName.val().trim(),
-      last_name: lastName.val().trim(),
+      first_name: firstName.val(),
+      last_name: lastName.val(),
       relationship: relationship.val()
     };
 
