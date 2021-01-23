@@ -1,0 +1,50 @@
+ <div class="column" style="background-color;">
+      <h6>What type of event or upcoming celebration would you like to add?</h6>
+
+      {{!-- Event options list --}}
+      <select class="event-options">
+        <option value=""></option>
+        <option value="anniversary">Anniversary</option>
+        <option value="annual-holdiay">Annual Holiday</option>
+        <option value="special-occasion">Special Occasion</option>
+      </select>
+
+      <br>
+
+      {{!-- TBD: list of holidays --}}
+      <div class="hide" id="list-of-holidays">
+        <h6>Which holiday will you be celebrating?</h6>
+        <select name="" id="">
+          <option value=""></option>
+          <option value=""></option>
+          <option value="placeholder">Placeholder</option>
+        </select>
+      </div>
+
+      <br>
+
+      {{!-- Special occasions list --}}
+      <div class="hide" id="list-of-occasions">
+        <h6>Select which occasion you are celebrating.</h6>
+        <select name="special" id="special">
+          <option value=""></option>  
+          <option value="Wedding">Wedding</option>
+          <option value="Engagement">Engagement</option>
+          <option value="Divorce">Divorce</option>
+          <option value="Graduation">Graduation</option>
+          <option value="Just beacuse">Just because</option>
+          <option value="Religious ceremony">Religious ceremony</option>
+          <option value="Promotion">Promotion</option> 
+          <option value="Baby Shower">Baby Shower</option> 
+        </select>
+      </div>
+
+      <br>
+
+      <label>Date</label>
+      <input type="text" id="event-date" placeholder="Please select Date" data-input>
+        
+  <submit class="btn create-event-btn btn-secondary">Add the event!</submit>
+</div>
+
+<script src="/assets/js/newevent.js"></script>
