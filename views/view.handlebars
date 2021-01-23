@@ -6,10 +6,10 @@
    <p>{{profile.email}}</p>
    <p>{{profile.phoneNumber}}</p>
 
-  <p>Update profile <a href="/editprofile">here.</a></p>
-  <p>Add an upcoming event <a href="/newevent">here.</a></p>
+  <p data-id={{profile.id}}>Update profile <a id="edit-profile-link" href="/editprofile" type="click">here.</a></p>
+  <p data-id={{profile.id}} id="new-event-link">Add an upcoming event <a href="/newevent/{{profile.id}}">here.</a></p>
 
 </div>
 </div>
 
-{{!-- <script src="../public/assets/js/view.js"></script> --}}
+<script src="/assets/js/view.js"></script>
