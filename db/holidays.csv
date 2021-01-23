@@ -1,0 +1,31 @@
+type, name, start_date
+Holiday,New Year's Day,2021-01-01
+Holiday,Martin Luther King Jr. Day,2021-01-18
+Holiday,President's Day,2021-02-15
+Holiday,Memorial Day,2021-05-31
+Holiday,Independence Day,2021-07-04
+Holiday,Labor Day,2021-09-06
+Holiday,Columbus Day,2021-10-11
+Holiday,Veteran's Day,2021-11-11
+Holiday,Thanksgiving Day,2021-11-25
+Holiday,Christmas Day,2021-12-25
+Holiday,New Year's Day,2022-01-01
+Holiday,Martin Luther King Jr. Day,2022-01-17
+Holiday,President's Day,2022-02-21
+Holiday,Memorial Day,2022-05-30
+Holiday,Independence Day,2022-07-04
+Holiday,Labor Day,2022-09-05
+Holiday,Columbus Day,2022-10-10
+Holiday,Veteran's Day,2022-11-11
+Holiday,Thanksgiving Day,2022-11-24
+Holiday,Christmas Day,2022-12-26
+Holiday,New Year's Day,2023-01-01
+Holiday,Martin Luther King Jr. Day,2023-01-16
+Holiday,President's Day,2023-02-20
+Holiday,Memorial Day,2023-05-29
+Holiday,Independence Day,2023-07-04
+Holiday,Labor Day,2023-09-04
+Holiday,Columbus Day,2023-10-09
+Holiday,Veteran's Day,2023-11-10
+Holiday,Thanksgiving Day,2023-11-23
+Holiday,Christmas Day,2023-12-25
