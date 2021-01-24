@@ -8,9 +8,9 @@ $(document).ready(function() {
   var eventName;
 
   $("#event-date").flatpickr({
-    enableTime: false,
-    dateFormat: "F, d Y",
-    altFormat: "Y-m-d"
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d"
 });
 
   eventOptions.on("input", function(event) {
@@ -53,7 +53,7 @@ $(document).ready(function() {
       name: eventName,
       start_date: eventDate
     }).then(function(res) {
-      window.location.replace("/dashboard/" + res.id)
+      window.location.replace("/view/" + res);
     });
    
   });
