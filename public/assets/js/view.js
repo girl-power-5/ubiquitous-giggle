@@ -14,5 +14,10 @@ $(document).ready(function() {
       window.location.replace("/newevent/" + profileID)
     })
   });
-
+  $(".viewdash").on("click", function(event) {
+    var user = localStorage.getItem('user');
+    window.location.replace("/dashboard/" + user.id);
+  })
 });
+
+
