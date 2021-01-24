@@ -2,29 +2,43 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Keep on Giftin'</a>
-      <a class="active"><a href="/">Dashboard/Home</a>
+      <a class="viewdash"> Dashboard/Home</a>
       <a href="/newprofile">Create New Profile</a>
       <a href="/logout">Log Out</a>
-    </ul>
-  </div>
+      </ul>
+    </div>
 </nav>
-  <h1>{{profile.firstName}} {{profile.lastName}}</h1>
-  <h2>{{profile.relationship}}</h2>
-  <h2>{{profile.birthday}}</h2>
-  <p>{{profile.email}}</p>
-  <p>{{profile.phoneNumber}}</p>
 
+<div class="profile-container">
+  <h1>{{profile.firstName}} {{profile.lastName}}</h1>
+  <div class="profile-view">
+    <h5>Relationship: {{profile.relationship}}</h5>
+       <h5>Birthday: {{profile.birthday}}</h5>
+       <h5> Email: {{profile.email}}</h5>
+       <h5> Phone: {{profile.phoneNumber}}</h5>
+    <p>Address</p>
+    <h5> Street: {{profile.phoneNumber}}</h5>
+    <h5> City: {{profile.phoneNumber}}</h5>
+    <h5> State: {{profile.phoneNumber}}</h5>
+    <h5> Zip: {{profile.phoneNumber}}</h5>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
   <p data-id={{profile.id}}>Update profile <a id="edit-profile-link" href="/editprofile" type="click">here.</a></p>
   <p data-id={{profile.id}} id="new-event-link">Add an upcoming event <a href="/newevent/{{profile.id}}">here.</a></p>
-  <p>Gift Ideas:</p>
-    <li><a href="https://www.1800flowers.com/">1-800-Flowers <i class="fas fa-seedling"></i></a></li>
-    <li><a href="https://www.ediblearrangements.com/">Edible Arrangements <i class="fas fa-apple-alt"></i></a></li>
-    <li><a href="https://www.etsy.com/gift-guides">Etsy <i class="fas fa-gift"></i></a></li>
+</div>
+
+<div class="gift-ideas">
+  <p>Need a Gift? Check out these links:</p>
+  <a href="https://www.1800flowers.com/">1-800-Flowers <i class="fas fa-seedling"></i></a>
+  <a href="https://www.ediblearrangements.com/">Edible Arrangements <i class="fas fa-apple-alt"></i></a>
+  <a href="https://www.etsy.com/gift-guides">Etsy <i class="fas fa-gift"></i></a>
+</div>
 
 </div>
-{{!-- button to nav back to dashboard --}}
-<div class=" d-flex align-items-center justify-content-center">
-  <button type="view" class="btn btn-outline-secondary viewdash">View Dashboard</button>
-</div>
+
+<footer> made by girl-power-5 ubiquitous-giggle copyright: 2021 </footer>
 
 <script src="/assets/js/view.js"></script>
