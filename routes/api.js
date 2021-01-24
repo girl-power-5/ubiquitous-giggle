@@ -1,6 +1,7 @@
 // Requiring our models and passport 
 var db = require("../models");
 var passport = require("../config/passport");
+const flatpickr = require("flatpickr");
 
 module.exports = function (app) {
   // Using handlebars to render static html pages...
@@ -51,7 +52,7 @@ module.exports = function (app) {
     })
   });
 
-  // Route to get an individual profile and render it to user's page
+  // Route to get an individual profile & associated event info and render it to user's page
   app.get("/view/:profileID", function (req, res) {
     var selected = req.params.profileID;
 
@@ -70,11 +71,24 @@ module.exports = function (app) {
         birthday: data.birthday,
         email: data.email,
         phoneNumber: data.phone_number,
-        id: selected
+        id: selected,
       }
-      console.log("$$$$$ ", data.dataValues.Events)
-      res.render("view", { profile: individualProfile })
-    })
+
+      var eventData = {};
+     
+
+      for (let i = 0; i < data.Events.length; i++) {
+        var date = new Date(data.Events[i].start_date)
+        console.log(data.Events[i])
+        eventData[i] = {
+          name: data.Events[i].name,
+          date: flatpickr.formatDate(date, "F j, Y")
+        };
+      };
+      //data.Events[i].start_date
+      console.log("eventData ", eventData)
+      res.render("view", { profile: individualProfile, events: eventData })
+    });
   });
 
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
@@ -148,7 +162,7 @@ module.exports = function (app) {
           console.log(sp);
         });
       });
-      res.json(req.user);
+      res.json(selectedProfile);
     });
 
   });
