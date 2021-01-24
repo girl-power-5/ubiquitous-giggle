@@ -9,6 +9,7 @@ h4 {
     position: fixed;
     bottom: 0;
     width: 100%;
+    margin-top: 50px
 }
 
 /*new profile css*/
@@ -16,7 +17,7 @@ h4 {
 
   padding: 3px;
 }
-.new_container{
+.new_container, .profile-container {
   border-radius: 25px;
   border: 2px solid	rgb(208,208,208);
   background-color:rgb(255, 255, 255) ;
@@ -56,5 +57,13 @@ text-align: left;
 
 h1,h2 {
  text-align: center;
-
 }
+
+.profile-view {
+  text-align:left
+}
+ .gift-ideas {
+   text-align: center;
+   margin-top: 25px
+ }
+
