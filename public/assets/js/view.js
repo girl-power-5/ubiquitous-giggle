@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   $("#new-event-link").on("click", function(event) {
     event.preventDefault();
-    var profileID = $(event.target).attr("data-id")
+    var profileID = $("#new-event-link").attr("data-id");
     console.log("test")
     
     $.get("/newevent/" + profileID).then(function(res) {
