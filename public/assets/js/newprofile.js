@@ -33,7 +33,7 @@ $(document).ready(function() {
       phone_number:phoneNumber.val(),
       email: email.val(), 
       address: address.val(),
-      address_2: address2.val(),
+      address_other: address2.val(),
       city: city.val(),
       state: state.val(),
       zip: zip.val()
@@ -48,7 +48,7 @@ $(document).ready(function() {
         phone_number: profileData.phone_number,
         email: profileData.email,
         address: profileData.address,
-        address_2: profileData.address_2,
+        address_other: profileData.address_other,
         city: profileData.city,
         state: profileData.state,
         zip: profileData.zip
@@ -58,5 +58,10 @@ $(document).ready(function() {
         window.location.replace("/dashboard/" + res.id)
       });
   });
+
+  $(".viewdash").on("click", function(event) {
+    var user = localStorage.getItem('user');
+    window.location.replace("/dashboard/" + user.id);
+  })
 
 });

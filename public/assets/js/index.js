@@ -32,7 +32,10 @@ $(document).ready(function() {
       password: password
     })
       .then(function(res) {
-        window.location.replace("/dashboard/" + res.id);
+        // this code captures the USERid to navigate back to dashboard please do not delete
+         // localStorage.setItem('myCat', 'Tom');
+         localStorage.setItem("user", res);
+         window.location.replace("/dashboard/" + res.id);
         // If there's an error, log the error
       })
       // .catch(function(err) {
