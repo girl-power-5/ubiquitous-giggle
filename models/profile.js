@@ -26,6 +26,18 @@ module.exports = function(sequelize, DataTypes) {
       },
       address: {
         type: DataTypes.STRING
+      },
+      address_2: {
+        type: DataTypes.STRING
+      },
+      city: {
+        type: DataTypes.STRING
+      },
+      state: {
+        type: DataTypes.STRING
+      },
+      zip: {
+        type: DataTypes.STRING
       }
     });
     Profile.associate = function(models) {

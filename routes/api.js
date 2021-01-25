@@ -28,24 +28,47 @@ module.exports = function (app) {
   });
 
   // Route to get all of the user's profiles and render to their main page after logging in
-  app.get("/dashboard/:id", function (req, res) {
+  app.get("/dashboard/:id", function (req, res)
+   {
     db.Profile.findAll({
       where: {
-        UserId: req.user.id
-      }
-    }).then(function(data) {
+        UserId: req.user.id      
+      },
+      include: db.Event,
+      required: false
 
+    }).then(function(data) {
+      console.log("all data ", data)
+      let eventTotal = 0;
       var profileData = {
       }
 
       for (let i = 0; i < data.length; i++) {
+        //console.log("!!!!datalengthtttt ", data[i].Events.length)
+        //onsole.log("!!!!the event ", data[i].Events[i].name)
+        console.log("test")
         profileData[i] = {
           id: data[i].id,
           firstName: data[i].first_name,
           lastName: data[i].last_name,
           relationship: data[i].relationship
         }
+        if (data[i].Events.length !== 0) {
+          console.log("lENGTH", data[i].Events.length)
+          console.log("NAME of event", data[i].Events[0].name)
+          var date = new Date(data[i].Events[0].start_date)
+          profileData[i] = {
+            events: {
+              name: data[i].Events[0].name,
+              date: flatpickr.formatDate(date, "F j, Y")
+            }
+        }
+      
       }
+
+      };
+        
+      console.log("profiledata ", profileData)
 
       res.render("dashboard", { profile: profileData })
 
@@ -76,7 +99,6 @@ module.exports = function (app) {
 
       var eventData = {};
      
-
       for (let i = 0; i < data.Events.length; i++) {
         var date = new Date(data.Events[i].start_date)
         console.log(data.Events[i])
@@ -85,8 +107,7 @@ module.exports = function (app) {
           date: flatpickr.formatDate(date, "F j, Y")
         };
       };
-      //data.Events[i].start_date
-      console.log("eventData ", eventData)
+     
       res.render("view", { profile: individualProfile, events: eventData })
     });
   });
@@ -140,6 +161,11 @@ module.exports = function (app) {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       relationship: req.body.relationship,
+      address: req.body.address,
+      address_2: req.body.address_2,
+      city: req.body.city,
+      state: req.body.state,
+      zip: req.body.zip,
       UserId: req.user.id
     }).then(function () {
       res.json(req.user);
