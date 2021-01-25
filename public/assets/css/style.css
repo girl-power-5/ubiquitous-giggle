@@ -1,3 +1,12 @@
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+}
+
+
 h4 {
     text-align: center;
 }
@@ -5,12 +14,52 @@ h4 {
     background-color: blueviolet;
 } */
 
+/* .footer {
+  position:fixed;
+  background-color:#f9f9f9;
+  margin:0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 5em;
+  padding:0.66em;
+  font-size:0.88em;
+  border-top:px solid #e6e6e6;
+} */
+
 .footer {
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
-    margin-top: 50px
+    border-top:px solid #e6e6e6;
+    margin:0;
+    bottom: 0;
+    background-color:#f9f9f9;
+    width: 100%;
+    padding:0.66em;
+    font-size:0.88em;
+    border-top:1px solid #e6e6e6;
+}
+
+
+.sidebar::-webkit-scrollbar
+{
+	width: 9px;
+	background-color: #F5F5F5;
+}
+.sidebar::-webkit-scrollbar-thumb
+{
+	background-color: #e3e3e3;
+}
+
+.sidebar{
+  padding:1.5em 1.5em 5.5em 1.5em;
+  max-height:100vh;
+  min-height:100vh;
+  overflow-y:auto;
+}
+.sidebar{
+  border-left: 1px solid #e6e6e6;
 }
 
 /*new profile css*/
@@ -19,26 +68,28 @@ h4 {
   padding: 3px;
 }
 .new_container, .profile-container {
-  border-radius: 25px;
+  border-radius: 2em;
   border: 2px solid	rgb(208,208,208);
   background-color:rgb(255, 255, 255) ;
-  padding: 20px; 
-  width: 600px;
-  height: 800px;  
+  padding: 1em; 
+  width: 40%;
+  height: 80%;  
   margin: auto;
-  font-size: 17px;
-  position: relative;
+  /* font-size: 17px; */
+  /* position: relative; */
   text-align: left
    
   }
+
+  
   
   /* Create two equal columns that floats next to each other */
-  .column {
-    float: left;
-    width: 50%;
-    padding: 30px;
-   
-  }
+.column {
+  float: left;
+  width: 50%;
+  padding: 30px;
+  
+}
   
   /* Clear floats after the columns */
   .row:after {
@@ -47,9 +98,9 @@ h4 {
     clear: both;
   }
 
-  .hide {
-    display: none;
-  }
+.hide {
+  display: none;
+}
 
 .relationship, .birthday{
 text-align: left;

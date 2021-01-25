@@ -56,11 +56,6 @@ module.exports = function (app) {
         }
       }
     };
-
-      
-      console.log("profiledata ", profileData)
-      console.log("evendata ", eventData)
-
       res.render("dashboard", { profile: profileData, event: eventData })
 
     })
@@ -85,7 +80,12 @@ module.exports = function (app) {
         birthday: data.birthday,
         email: data.email,
         phoneNumber: data.phone_number,
-        id: selected,
+        address: data.address,
+        address2: data.address2,
+        city: data.city,
+        state: data.state,
+        zip: data.zip,
+        id: selected
       }
 
       var eventData = {};
@@ -99,7 +99,7 @@ module.exports = function (app) {
         };
       };
      
-      res.render("view", { profile: individualProfile, events: eventData })
+      res.render("view", { profile: individualProfile, event: eventData })
     });
   });
 
@@ -148,10 +148,14 @@ module.exports = function (app) {
 
   // POST method for adding a new profile to a user's account/dashboard
   app.post("/api/newprofile", function (req, res) {
+    console.log("REQEUST ", req)
     db.Profile.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       relationship: req.body.relationship,
+      birthday: req.body.birthday,
+      phone_number:req.body.phone_number,
+      email: req.body.email,
       address: req.body.address,
       address_2: req.body.address_2,
       city: req.body.city,
