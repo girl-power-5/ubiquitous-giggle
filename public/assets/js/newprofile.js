@@ -5,7 +5,14 @@ $(document).ready(function() {
   var lastName = $("input.last-name");
    // we had a .val here which was setting the variable to nothing, and was not grabbing the correct element. 
   var relationship = $("#relationship");
-
+ 
+  // Create a function for flatpickr
+  $("#birthday").flatpickr({
+    altInput: true,
+    altFormat: "F d, Y",
+    dateFormat: "Y-m-d"
+  });
+ 
   // On submit, send the user input to the /api/newprofile route using a POST method
   profileForm.on("submit", function(event) {
     event.preventDefault();
@@ -33,5 +40,4 @@ $(document).ready(function() {
       window.location.replace("/dashboard/" + res.id)
     })
   };
-
 });
