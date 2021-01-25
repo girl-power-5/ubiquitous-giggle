@@ -34,43 +34,34 @@ module.exports = function (app) {
       where: {
         UserId: req.user.id      
       },
-      include: db.Event,
-      required: false
+      include: db.Event
 
     }).then(function(data) {
-      console.log("all data ", data)
-      let eventTotal = 0;
-      var profileData = {
-      }
+      var profileData = {}
+      var eventData = {}
 
       for (let i = 0; i < data.length; i++) {
-        //console.log("!!!!datalengthtttt ", data[i].Events.length)
-        //onsole.log("!!!!the event ", data[i].Events[i].name)
-        console.log("test")
         profileData[i] = {
           id: data[i].id,
           firstName: data[i].first_name,
           lastName: data[i].last_name,
           relationship: data[i].relationship
         }
+
         if (data[i].Events.length !== 0) {
-          console.log("lENGTH", data[i].Events.length)
-          console.log("NAME of event", data[i].Events[0].name)
           var date = new Date(data[i].Events[0].start_date)
-          profileData[i] = {
-            events: {
+          eventData[i] = {
               name: data[i].Events[0].name,
               date: flatpickr.formatDate(date, "F j, Y")
-            }
         }
-      
       }
+    };
 
-      };
-        
+      
       console.log("profiledata ", profileData)
+      console.log("evendata ", eventData)
 
-      res.render("dashboard", { profile: profileData })
+      res.render("dashboard", { profile: profileData, event: eventData })
 
     })
   });
