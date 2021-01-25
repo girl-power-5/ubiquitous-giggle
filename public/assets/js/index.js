@@ -32,9 +32,6 @@ $(document).ready(function() {
       password: password
     })
       .then(function(res) {
-        console.log(res)
-        // localStorage.setItem('myCat', 'Tom');
-        localStorage.setItem("user", res);
         window.location.replace("/dashboard/" + res.id);
         // If there's an error, log the error
       })

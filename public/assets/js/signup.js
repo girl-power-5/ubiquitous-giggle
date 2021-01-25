@@ -28,11 +28,11 @@ $(document).ready(function() {
         email: email,
         password: password
       })
-        .then(function(data) {
-          window.location.replace("/dashboard");
+        .then(function(res) {
+          window.location.replace("/dashboard/" + res.id);
           // If there's an error, handle it by throwing up a bootstrap alert
         })
-        .catch(handleLoginErr);
+        // .catch(handleLoginErr);
     }
   
     function handleLoginErr(err) {

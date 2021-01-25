@@ -2,14 +2,14 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand">Keep on Giftin'</a>
-      <a class="active"><a href="/">Dashboard/Home</a>
+      <a class="active"><a href="/dashboard/">Dashboard/Home</a>
         <a href="/newprofile">Create New Profile</a>
         <a href="/logout">Log Out</a>
         </ul>
     </div>
 </nav>
-<form class="profile">
-  <div class="new_container">
+<form class="profile new_container">
+  <div class="">
     <h1>Create profile</h1>
     <h4>Required information</h4>
     <!-- First Name Last Name -->
@@ -41,7 +41,7 @@
       <!-- Birthday-->
       <label class="birthday">Date of Birth
       </label>
-      <input type="text" id="birthday" placeholder="xx-xx-xxxx" data-input>
+      <input type="text" id="birthday" placeholder="xx-xx" data-input>
       <!-- Address -->
       <div class="form-group">
         <label for="inputAddress">Address</label>
@@ -59,7 +59,7 @@
         <div class="form-group col-md-4">
           <label for="inputState">State</label>
           <select id="inputState" class="form-control">
-            <option selected>Choose...</option>
+            <option selected></option>
             <option>AL</option>
             <option>AK</option>
             <option>AZ</option>
@@ -116,22 +116,29 @@
           <label for="inputZip">Zip</label>
           <input type="text" class="form-control" id="inputZip">
         </div>
-      </div>
+        <div class="col-md-4">
 
+        </div>
+      </div>
 
       <div class=" d-flex align-items-center justify-content-center">
         <button type="submit" class="btn btn-outline-secondary">Save</button>
       </div>
-
       <div class=" d-flex align-items-center justify-content-center">
         <button type="view" class="btn btn-outline-secondary">View Dashboard</button>
       </div>
-
   </div>
-  <script src="assets/js/newprofile.js"></script>
   </div>
 </form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <div class="footer">
   <p>Made by girl-power-5 ubiquitous-giggle Copyright &#169; 2021</p>
 </div>
+
+<script src="assets/js/newprofile.js"></script>
