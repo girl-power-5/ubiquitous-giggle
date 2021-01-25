@@ -1,27 +1,26 @@
 <header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="viewdash btn btn-outline-primary"> Dashboard/Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="/newprofile" class="btn btn-outline-primary">Create New Profile</a>
-      </li>
-      <li class="nav-item">
-        <a href="/logout" class="btn btn-outline-primary">Log Out</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="viewdash btn btn-outline-primary"> Dashboard/Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="/newprofile" class="btn btn-outline-primary">Create New Profile</a>
+        </li>
+        <li class="nav-item">
+          <a href="/logout" class="btn btn-outline-primary">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>
 
 <div class="container col-md-10">
-  <h1 style=>{{profile.firstName}} {{profile.lastName}}</h1>
   <ul class="nav nav-tabs">
     <li class="active">
       <button class="btn"><a href="#1" data-toggle="tab">Profile</a></button>
@@ -35,26 +34,37 @@
 
   <div class="tab-content">
     <div class="tab-pane active" id="1">
-      <div class="col-lg-10">
+      <div class="col-lg-12">
         <div class="profile-container">
           <div class="profile-view">
-            <p>Relationship: {{profile.relationship}}</p>
-               <p>Birthday: {{profile.birthday}}</p>
-               <h5> Email: {{profile.email}}</h5>
-               <h5> Phone: {{profile.phoneNumber}}</h5>
-            <h5>Address</h5>
-            <p> Address: {{profile.address}}</p>
-            <p> Address 2: {{profile.address2}}</p>
-            <p> City: {{profile.city}}</p>
-            <p> State: {{profile.state}}</p>
-            <p> Zip: {{profile.zip}}</p>
+            <i class="fas fa-3x fa-user-circle"></i>
+            <h1 style=>{{profile.firstName}} {{profile.lastName}}</h1>
+            <h6 class="d-flex justify-content-center"></i> {{profile.relationship}}</h6>
+            {{#if profile.birthday}}
+             <p><i class="fas fa-2x  fa-birthday-cake"></i>{{profile.birthday}}</p>
+            {{/if}}
+            {{#if profile.email}}
+             <h6><i class="fas fa-2x fa-paper-plane"></i>{{profile.email}}</h6>  
+            {{/if}}
+            {{#if profile.phoneNumber}}
+            <p><i class="fas fa-2x fa-mobile-alt"></i> {{profile.phoneNumber}}</p>
+            {{/if}}
+            {{#if profile.address}}
+            <p><i class="fas fa-2x fa-map-marker-alt"></i>
+              Address: {{profile.address}}
+              <br>
+              Address 2: {{profile.address2}}
+              <br>
+              City: {{profile.city}}
+              <br>
+              State: {{profile.state}}
+              <br>
+              Zip: {{profile.zip}}
+            </p>
+            {{/if}}
           </div>
-          <br>
-          <br>
-          <br>
-          <br>
-          <p data-id={{profile.id}}>Update profile <a id="edit-profile-link" href="/editprofile" type="click">here.</a>
-          </p>
+          {{!-- <p data-id={{profile.id}}>Update profile <a id="edit-profile-link" href="/editprofile" type="click">here.</a>
+          </p> --}}
           <p data-id={{profile.id}} id="new-event-link">Add an upcoming event <a
               href="/newevent/{{profile.id}}">here.</a>
           </p>
@@ -63,7 +73,7 @@
     </div>
     <div class="tab-pane" id="2">
       <div class="d-flex list-group col-lg justify-content-beginning mt-5">
-        <h5>Upcoming Events</h5>
+        <h5>Upcoming Events with {{profile.firstName}}</h5>
         {{#each event}}
         <p href="#" class="list-group-item list-group-item-action active">{{this.name}} on {{this.date}}</p>
         {{/each}}
@@ -83,14 +93,14 @@
 
 <div class="footer mt-5">
 
-<div>
-  <div class="gift-ideas">
-    <a target="_blank" href="https://www.1800flowers.com/">1-800-Flowers <i class="fas fa-seedling"></i></a>
-    <a target="_blank" href="https://www.ediblearrangements.com/">Edible Arrangements <i
-        class="fas fa-apple-alt"></i></a>
-    <a target="_blank" href="https://www.etsy.com/gift-guides">Etsy <i class="fas fa-gift"></i></a>
+  <div>
+    <div class="gift-ideas">
+      <a target="_blank" href="https://www.1800flowers.com/">1-800-Flowers <i class="fas fa-seedling"></i></a>
+      <a target="_blank" href="https://www.ediblearrangements.com/">Edible Arrangements <i
+          class="fas fa-apple-alt"></i></a>
+      <a target="_blank" href="https://www.etsy.com/gift-guides">Etsy <i class="fas fa-gift"></i></a>
+    </div>
   </div>
-</div>
   <p>Made by girl-power-5 ubiquitous-giggle Copyright &#169; 2021</p>
 
 </div>

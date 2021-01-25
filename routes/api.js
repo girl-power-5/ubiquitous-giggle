@@ -154,6 +154,8 @@ module.exports = function (app) {
       last_name: req.body.last_name,
       relationship: req.body.relationship,
       birthday: req.body.birthday,
+      phone_number:req.body.phone_number,
+      email: req.body.email,
       address: req.body.address,
       address_2: req.body.address_2,
       city: req.body.city,
