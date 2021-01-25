@@ -157,7 +157,7 @@ module.exports = function (app) {
       phone_number:req.body.phone_number,
       email: req.body.email,
       address: req.body.address,
-      other: req.body.address_other,
+      address_other: req.body.address_other,
       city: req.body.city,
       state: req.body.state,
       zip: req.body.zip,
