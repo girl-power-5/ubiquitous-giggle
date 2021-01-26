@@ -1,0 +1,27 @@
+<div class="container">
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Address</th>
+      <th scope="col">Column heading</th>
+      <th scope="col">Column heading</th>
+      <th scope="col">Column heading</th>
+    </tr>
+    {{#each address}}
+    <tr>     
+      {{#if this.address}}
+      <th scope="col">{{this.address}}</th>
+      {{/if}}
+      <td scope="col">Content</td>
+      <td scope="col">Column</td>
+      <td scope="col">Column</td>
+    </tr>
+    {{/each}}
+  </thead>
+</table>
+
+<form method="get" action="file.xml">
+   <button class="btn btn-primary submit-btn" type="submit">WHERE IS THE TEXT</button>
+</form>
+</div>
