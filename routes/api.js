@@ -52,7 +52,8 @@ module.exports = function (app) {
           var date = new Date(data[i].Events[0].start_date)
           eventData[i] = {
               name: data[i].Events[0].name,
-              date: flatpickr.formatDate(date, "F j, Y")
+              date: flatpickr.formatDate(date, "F j, Y"),
+              firstName: data[i].first_name
         }
       }
     };
