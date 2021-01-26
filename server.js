@@ -29,7 +29,7 @@ app.use(passport.session());
 require("./routes/api.js")(app)
 
 // Syncing our database and letting the user know they successfully connected
-db.sequelize.sync().then(function() {
+db.sequelize.sync({alter: true}).then(function() {
   app.listen(PORT, function() {
     console.log(`Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`);
   });
