@@ -6,7 +6,8 @@
   3. [Usage](#Usage)
   4. [Licence](#Licence)
   5. [Credits](#Credits)
-  6. [Questions](#Questions)
+  6. [Suggestions](#Suggestions)
+  7. [Questions](#Questions)
 
 ## Description:
 An application that reminds the user of certain dates to send friends and family gifts/cards.
@@ -75,16 +76,25 @@ Passport: https://www.youtube.com/watch?v=hNinO6-bDVM
 Flatpickr: https://codepen.io/riyos94/pen/xppbBj
 HW 14 Passport
 
-## Questions:
-For more information on this project, here is a link to GitHub:
-[GitHub Link](https://github.com/girl-power-5)
+Many thanks to the support of our project advisor, team leads, tutors, and classmates who took the time to help us troubleshoot to get everything working properly.   Without your support, we would not have this application running.   
 
-Please reach out via email for any further questions:
+## Suggestions
+We are always looking to improve our application, please feel free to reach out with suggestions or holiday ideas.   
 amber.park@northwestern.edu
 claudiaalpert@gmail.com
 emilyblair96@gmail.com
 jen.doyle5254@gmail.com
 melissaward953@gmail.com
 
+## Questions:
+For more information on this project, here is a link to GitHub:
+[GitHub Link](https://github.com/girl-power-5)
+
+Girl-Power 5 Members: 
+[GitHub Link](https://github.com/Calpert)
+[GitHub Link](https://github.com/emblair96)
+[GitHub Link](https://github.com/mw18)
+[GitHub Link](https://github.com/amberchiodini)
+[GitHub Link](https://github.com/Jdoyle5254)
 
 
