@@ -51,6 +51,12 @@ They will enter their email address and password to sign into the application, o
 Once the user is signed in, they will be taken to the dashboard where they can see current profiles. They will be able to open the profile page or edit the profile information. They can also create a new profile by clicking the link at the bottom of the page.
 The sidebar on the dashboard page will provide links to navigate the page.
 
+![login](https://user-images.githubusercontent.com/69092983/105796859-5c47cb80-5f55-11eb-854d-28d7b454eacd.png)
+![signup](https://user-images.githubusercontent.com/69092983/105796860-5ce06200-5f55-11eb-8db7-8ed289333cd8.png)
+![dashboard](https://user-images.githubusercontent.com/69092983/105796858-5c47cb80-5f55-11eb-9b7d-b402990558a0.png)
+![create_profile](https://user-images.githubusercontent.com/69092983/105796855-5baf3500-5f55-11eb-9b12-aac76b6b2939.png)
+![view_profile](https://user-images.githubusercontent.com/69092983/105796856-5c47cb80-5f55-11eb-82bb-3453e71e7b83.png)
+
 ## Licence:
 MIT
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
