@@ -18,6 +18,7 @@ $(document).ready(function() {
 
     if (!userData.email || !userData.password) {
       return;
+      toastr["error"]("The email and password were not found.   Please try again.  ", "Invalid Login")
     }
     // If we have an email and password we run the loginUser function and clear the form
     loginUser(userData.email, userData.password);
@@ -34,7 +35,8 @@ $(document).ready(function() {
       .then(function(res) {
         // this code captures the USERid to navigate back to dashboard please do not delete
          // localStorage.setItem('myCat', 'Tom');
-         localStorage.setItem("user", res);
+         localStorage.setItem("user", JSON.stringify(res));
+        //  localStorage.setItem("user", res);
          window.location.replace("/dashboard/" + res.id);
         // If there's an error, log the error
       })
