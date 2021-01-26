@@ -27,12 +27,11 @@
     </div>
     {{!-- Render cards for individual profiles --}}
     <div class="row">
-        <div class="container">
         <div class="col-md-8">
             <div class="row d-flex">
                 {{#each profile}}
-                <div class="col-4">
-                    <div class="card">
+                <div class="col-md-4">
+                    <div class="card border-primary">
                         <div class="card-body">
                             <h5 class="card-title">{{this.firstName}} {{this.lastName}}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{this.relationship}}</h6>
@@ -45,7 +44,7 @@
                 {{/each}}
             </div>
         </div>
-        <div class="col-md-3 sidebar ml-5 pl-1">
+        <div class="container col-md-3 sidebar ml-5 pl-1">
             <h6>Upcoming Events</h6>
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16">
                 <path
@@ -61,11 +60,6 @@
 
         </div>
     </div>
-    </div>
-<div class="footer mt-5">
-
-
-</div>
 </div>
 <div class="footer d-flex justify-content-center">
   <p>Made by girl-power-5 ubiquitous-giggle Copyright &#169; 2021</p>
