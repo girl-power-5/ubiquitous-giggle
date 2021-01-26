@@ -10,7 +10,8 @@ $(document).ready(function() {
   $("#event-date").flatpickr({
     altInput: true,
     altFormat: "F j, Y",
-    dateFormat: "Y-m-d"
+    dateFormat: "Y-m-d",
+    minDate: "today"
 });
 
   eventOptions.on("input", function(event) {
