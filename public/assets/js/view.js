@@ -16,7 +16,7 @@ $(document).ready(function() {
   });
   
   $(".viewdash").on("click", function(event) {
-    var user = localStorage.getItem('user');
+    var user = JSON.parse(localStorage.getItem("user"));
     window.location.replace("/dashboard/" + user.id);
   })
 });
