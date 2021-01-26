@@ -38,6 +38,24 @@ module.exports = function(sequelize, DataTypes) {
       },
       zip: {
         type: DataTypes.STRING
+      },
+      valentines_day: {
+        type: DataTypes.BOOLEAN
+      },
+      hanukkah: {
+        type: DataTypes.BOOLEAN
+      },
+      christmas: {
+        type: DataTypes.BOOLEAN
+      },
+      mothers_day: {
+        type: DataTypes.BOOLEAN
+      },
+      fathers_day: {
+        type: DataTypes.BOOLEAN
+      },
+      halloween: {
+        type: DataTypes.BOOLEAN
       }
     });
     Profile.associate = function(models) {

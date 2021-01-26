@@ -1,30 +1,28 @@
-
 .navbar {
   position: sticky;
-  top: 0;
-  z-index: 5;
-
 }
 
 
 h4 {
     text-align: center;
 }
-/* .sidebar {
-    background-color: blueviolet;
-} */
 
-/* .footer {
-  position:fixed;
-  background-color:#f9f9f9;
-  margin:0;
-  bottom: 0;
-  width: 100%;
-  margin-top: 5em;
-  padding:0.66em;
-  font-size:0.88em;
-  border-top:px solid #e6e6e6;
-} */
+/* Hover effect transition time */
+.card {
+  transition: 0.7s;
+ }
+  
+ /* Hover effect on projects, only on devices with pointer */
+ @media(hover: hover) and
+ (pointer: fine) {
+  .card:hover{
+    cursor: pointer;
+    opacity: 100%;
+    transform: scale(1.1);
+    border-radius: 2%;
+  }
+ }
+ 
 
 .footer {
     text-align: center;
@@ -40,7 +38,6 @@ h4 {
     font-size:0.88em;
     border-top:1px solid #e6e6e6;
 }
-
 
 .sidebar::-webkit-scrollbar
 {
@@ -91,12 +88,12 @@ h4 {
   
 }
   
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 .hide {
   display: none;
