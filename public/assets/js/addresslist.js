@@ -1,7 +1,9 @@
-$(".submit-btn").on("submit", function(event) {
-  event.preventDefault();
+$(document).ready(function() {
+  $(".viewdash").on("click", function(event) {
+    console.log("TEST")
+    var currentUser = $(".viewdash").attr("data-id")
+    console.log(currentUser)
 
-  $.get("/addresslist").then(function(res) {
-    
+    window.location.replace("/dashboard/" + currentUser)
   })
 })

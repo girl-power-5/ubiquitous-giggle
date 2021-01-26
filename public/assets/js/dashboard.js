@@ -21,41 +21,31 @@ $(document).ready(function() {
 
   })
 
-  var queryURL = "https://calendarific.com/api/v2/holidays?&api_key=f13cfb989895d4ff8722f0c1e5e9080836d02dbe&country=US&year=2021"
+  // var queryURL = "https://calendarific.com/api/v2/holidays?&api_key=f13cfb989895d4ff8722f0c1e5e9080836d02dbe&country=US&year=2021"
 
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(data) {
-    var upcomingHolidays = $("#upcoming-holidays");
+  // $.ajax({
+  //   url: queryURL,
+  //   method: "GET"
+  // }).then(function(data) {
+  //   var upcomingHolidays = $("#upcoming-holidays");
 
-    var holidayObject = data.response.holidays.filter(holiday => {
-      console.log(holiday)
-      return ((holiday.date.iso) > (date) && holiday.date.iso < datePlusMonthFormatted)
-    })
+  //   var holidayObject = data.response.holidays.filter(holiday => {
+  //     console.log(holiday)
+  //     return ((holiday.date.iso) > (date) && holiday.date.iso < datePlusMonthFormatted)
+  //   })
 
-
-    // Trying to figure out how to filter out the more popular/general holidays
-    holidayObject2 = holidayObject.filter(holiday => {
-      console.log("HOLIDAY", holiday)
-      holiday.type.find(type => {
-        type === "National holiday" || type === "Hebrew" || type === "Muslim" || type === "Local observance" || type === "Sporting event"
-      })
+  //   // Trying to figure out how to filter out the more popular/general holidays
+  //   holidayObject2 = holidayObject.filter(holiday => {
+  //     holiday.type.find(type => {
+  //       type === "National holiday" || type === "Hebrew" || type === "Muslim" || type === "Local observance" || type === "Sporting event"
+  //     })
     
-    })
+  //   })
 
-    console.log("OBJECT2", holidayObject2)
+  //   holidayObject.forEach(holiday => {
+  //     upcomingHolidays.append(`<p> ${holiday.name} on ${holiday.date.iso} </p>`)
+  //   })
 
-
-    holidayObject.forEach(holiday => {
-      upcomingHolidays.append(`<p> ${holiday.name} on ${holiday.date.iso} </p>`)
-    })
-
-
-
-
-    console.log("AJAX", data.response.holidays)
-
-  });
+  // });
 
 });

@@ -4,13 +4,17 @@
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav"><img src="/assets/images/gift.png" height="125" width="125" alt="Keep on Giftin'">
+    <div class="collapse navbar-collapse" id="navbarNav"><img src="/assets/images/gift.png" height="125" width="125"
+        alt="Keep on Giftin'">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="viewdash btn btn-outline-primary">Dashboard</a>
         </li>
         <li class="nav-item">
           <a href="/newprofile" class="btn btn-outline-primary">Create New Profile</a>
+        </li>
+        <li class="nav-item">
+          <a href="/addresslist" class="address-list btn btn-outline-primary">Address List</a>
         </li>
         <li class="nav-item">
           <a href="/logout" class="btn btn-outline-primary">Log Out</a>
@@ -140,42 +144,42 @@
         </div>
       </div>
 
-        <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-      <label class="form-check-label" for="flexCheckChecked">
-      Valentine's Day
-      </label>
-    </div>
-     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-      <label class="form-check-label" for="flexCheckChecked">
-        Hanukkah
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-      <label class="form-check-label" for="flexCheckChecked">
-        Christmas
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-      <label class="form-check-label" for="flexCheckChecked">
-        Mother's Day
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-      <label class="form-check-label" for="flexCheckChecked">
-        Father's Day
-      </label>
-    </div>
-     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-      <label class="form-check-label" for="flexCheckChecked">
-        Halloween
-      </label>
-    </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="valentines_day" data-id="0" id="valentines_day">
+        <label class="form-check-label" for="flexCheckChecked">
+          Valentine's Day
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="hanukkah" data-id="0" id="hanukkah">
+        <label class="form-check-label" for="flexCheckChecked">
+          Hanukkah
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="christmas" data-id="0" id="christmas">
+        <label class="form-check-label" for="flexCheckChecked">
+          Christmas
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input mothers-day" type="checkbox" value="mothers_day" data-id="0" id="mothers_day">
+        <label class="form-check-label" for="flexCheckChecked">
+          Mother's Day
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="fathers_day" data-id="0" id="fathers_day">
+        <label class="form-check-label" for="flexCheckChecked">
+          Father's Day
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="halloween" data-id="0" id="halloween">
+        <label class="form-check-label" for="flexCheckChecked">
+          Halloween
+        </label>
+      </div>
 
       <div class=" d-flex align-items-center justify-content-center">
         <button type="submit" class="btn btn-outline-secondary">Save</button>

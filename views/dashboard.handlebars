@@ -1,11 +1,12 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      aria-controls="navbarNav" aria-expanded="" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav"><img src="/assets/images/gift.png" height="125" width="125" alt="Keep on Giftin'">
-      <ul class="navbar-nav ml-auto">
+    <div class="collapse" id="navbarNav"><img src="/assets/images/gift.png" height="125" width="125"
+        alt="Keep on Giftin'">
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="viewdash btn btn-outline-primary">Dashboard</a>
         </li>
@@ -13,56 +14,59 @@
           <a href="/newprofile" class="btn btn-outline-primary">Create New Profile</a>
         </li>
         <li class="nav-item">
+          <a href="/addresslist" class="address-list btn btn-outline-primary">Address List</a>
+        </li>
+        <li class="nav-item">
           <a href="/logout" class="btn btn-outline-primary">Log Out</a>
         </li>
       </ul>
     </div>
   </nav>
+  
 </header>
 
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h4>Welcome to your Giftin' Dashboard</h4>
-        </div>
+  <div class="row">
+    <div class="col-12">
+      <h4>Welcome to your Giftin' Dashboard</h4>
     </div>
-    {{!-- Render cards for individual profiles --}}
-    <div class="row">
-        <div class="col-md-8">
-            <div class="row d-flex">
-                {{#each profile}}
-                <div class="col-md-4">
-                    <div class="card border-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">{{this.firstName}} {{this.lastName}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{this.relationship}}</h6>
-                            <a href="/view" class="card-link profile-link" data-id={{this.id}}>Profile Page</a>
-                            <a href="/editprofile" class="card-link">Edit</a>
-                        </div>
-                    </div>
-                    <div class="col-1"></div>
-                </div>
-                {{/each}}
+  </div>
+  {{!-- Render cards for individual profiles --}}
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row d-flex">
+        {{#each profile}}
+        <div class="col-md-4">
+          <div class="card border-primary">
+            <div class="card-body">
+              <h5 class="card-title">{{this.firstName}} {{this.lastName}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{this.relationship}}</h6>
+              <a href="/view" class="card-link profile-link" data-id={{this.id}}>Profile Page</a>
+              <a href="/editprofile" class="card-link">Edit</a>
             </div>
+          </div>
+          <div class="col-1"></div>
         </div>
-        <div class="container col-md-3 sidebar ml-5 pl-1">
-            <h6>Upcoming Events</h6>
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16">
-                <path
-                    d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z" />
-            </svg>
-            {{!-- Here we are calling an event from the event table --}}
-            <div class="list-group">
-                {{#each event}} 
-                <p href="#" class="list-group-item list-group-item-action active">{{this.firstName}} {{this.name}} on {{this.date}}</p>
-                
-                {{/each}}
-            </div>
-
-            <h6 id="upcoming-holidays">Upcoming Holidays</h6>
-
-        </div>
+        {{/each}}
+      </div>
     </div>
+    <div class="container col-md-3 sidebar ml-5 pl-1">
+      <h6>Upcoming Events</h6>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16">
+        <path
+          d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z" />
+      </svg>
+      {{!-- Here we are calling an event from the event table --}}
+      <div class="list-group">
+        {{#each event}}
+        <p href="#" class="list-group-item list-group-item-action active">{{this.name}} on {{this.date}} with
+          {{this.firstName}}</p>
+
+        {{/each}}
+      </div>
+      {{!-- <h6 id="upcoming-holidays">Upcoming Holidays</h6> --}}
+    </div>
+  </div>
 </div>
 <div class="footer d-flex justify-content-center">
   <p>Made by girl-power-5 ubiquitous-giggle Copyright &#169; 2021</p>
@@ -72,4 +76,4 @@
 <br>
 <br>
 <br>
-<script src="/assets/js/dashboard.js"></script>
+<script src="/assets/js/addresslist.js"></script>

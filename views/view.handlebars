@@ -62,6 +62,27 @@
               Zip: {{profile.zip}}
             </p>
             {{/if}}
+            <p>Celebrates:</p>
+              <ul>
+                {{#if profile.valentines_day}}
+                <li>Valentine's Day</li>
+                {{/if}}
+                {{#if profile.hanukkah}}
+                <li>Hanukkah</li>
+                {{/if}}
+                {{#if profile.christmas}}
+                <li>Christmas</li>
+                {{/if}}
+                {{#if profile.mothers_day}}
+                <li>Mother's Day</li>
+                {{/if}}
+                {{#if profile.fathers_day}}
+                <li>Father's Day</li>
+                {{/if}}
+                {{#if profile.halloween}}
+                <li>Halloween</li>
+                {{/if}}
+              </ul>
           </div>
           <p data-id={{profile.id}} id="new-event-link">Add an upcoming event <a
               href="/newevent/{{profile.id}}">here.</a>
@@ -79,7 +100,7 @@
     </div>
   </div>
 </div>
-</div>
+
 <div>
     <div class="gift-ideas">
       <p>Need a gift? Checkout these links:</p>
@@ -88,7 +109,7 @@
           class="fas fa-apple-alt"></i></a>
       <a target="_blank" href="https://www.etsy.com/gift-guides">Etsy <i class="fas fa-gift"></i></a>
     </div>
-  </div>
+</div>
 <br>
 <br>
 <br>

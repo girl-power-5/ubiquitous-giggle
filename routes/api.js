@@ -86,6 +86,12 @@ module.exports = function (app) {
         city: data.city,
         state: data.state,
         zip: data.zip,
+        valentines_day: data.valentines_day,
+        hanukkah: data.hanukkah,
+        christmas: data.christmas,
+        mothers_day: data.mothers_day,
+        fathers_day: data.fathers_day,
+        hallowen: data.halloween,
         id: selected
       }
 
@@ -99,9 +105,46 @@ module.exports = function (app) {
           date: flatpickr.formatDate(date, "F j, Y")
         };
       };
+
      
       res.render("view", { profile: individualProfile, event: eventData })
     });
+  });
+
+  app.get("/addresslist", function(req, res) {
+    db.Profile.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    }).then(function(data){
+      var addressData = {
+
+      }
+      if (data.length !== 0) {
+      for (let i=0; i<data.length; i++) {
+        addressData[i] = {
+          firstName: data[i].first_name,
+          lastName: data[i].last_name,
+          email: data[i].email,
+          phoneNumber: data[i].phone_number,
+          address: data[i].address,
+          address_2: data[i].address_other,
+          city: data[i].city,
+          state: data[i].state,
+          zip: data[i].zip,
+          valentines_day: data[i].valentines_day,
+          hanukkah: data[i].hanukkah,
+          christmas: data[i].christmas,
+          halloween: data[i].halloween
+        }
+      }
+      var currentUser = data[0].UserId
+      res.render("addresslist", {address: addressData, currentUser: currentUser})
+      }
+      
+      console.log("DAATAAAA", addressData)
+      res.render("addresslist", {currentUser: req.user.id})
+    })
   });
 
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
@@ -162,6 +205,12 @@ module.exports = function (app) {
       city: req.body.city,
       state: req.body.state,
       zip: req.body.zip,
+      valentines_day: req.body.valentines_day,
+      hanukkah: req.body.hanukkah,
+      christmas: req.body.christmas,
+      mothers_day: req.body.mothers_day,
+      fathers_day: req.body.fathers_day,
+      halloween: req.body.halloween,
       UserId: req.user.id
     }).then(function () {
       res.json(req.user);
