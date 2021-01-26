@@ -13,6 +13,7 @@ $(document).ready(function() {
 
     // Capture which card was selected and grab the data-id which represents the profile id in the db
     var profileID = $(event.target).attr("data-id")
+    console.log('PROFILEID', profileID)
 
     // GET method to retrieve data associated with the selected profile and display to the page
     $.get("/view/" + profileID).then(function(res) {
