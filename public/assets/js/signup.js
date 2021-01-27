@@ -36,7 +36,7 @@ $(document).ready(function() {
         toastr.error("You shall not pass with those credentials ", "ERROR ")
       }
       // If we have an email and password, run the signUpUser function
-      signUpUser(userData.email, userData.password);
+      signUpUser(userData.userId, userData.email, userData.password);
       userIdInput.val("");
       emailInput.val("");
       passwordInput.val("");
@@ -44,7 +44,7 @@ $(document).ready(function() {
   
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
-    function signUpUser(email, password) {
+    function signUpUser(userId, email, password) {
       $.post("/api/signup", {
         userId: userId,
         email: email,
