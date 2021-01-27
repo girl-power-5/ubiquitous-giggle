@@ -5,14 +5,31 @@ $(document).ready(function() {
   var lastName = $("input.last-name");
   var relationship = $("#relationship");
   var phoneNumber = $("#inputNum");
-  var email = $("#inpuEmail")
+  var email = $("#inputEmail")
   var birthday = $("#birthday");
   var address = $("#inputAddress");
   var address2 = $("#inputAddress2");
   var city = $("#inputCity");
   var state = $("#inputState");
   var zip = $("#inputZip");
-  var valentinesDay = $("#valentines_day");
+
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-center",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "5000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
 
   // Determine if holidays are checked or unchecked
   $("#valentines_day").on("change", function(event) {
@@ -126,9 +143,14 @@ $(document).ready(function() {
         mothers_day: profileData.mothers_day,
         fathers_day: profileData.fathers_day,
         halloween: profileData.fathers_day
+       
         // Redirect the user to their dashboard after they create a new profile
+      
+
       }).then(function(res) {
+        toastr.success("You've added a new profile!", "YAY! ")
         window.location.replace("/dashboard/" + res.id)
+        
       });
   });
 

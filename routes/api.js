@@ -15,7 +15,21 @@ module.exports = function (app) {
 
   app.get("/newevent/:profileID", function (req, res) {
     var selectedProfile = req.params.profileID;
-    res.render("newevent", { profileID: selectedProfile });
+    db.Profile.findOne({
+      where: {
+        id: selectedProfile
+      },
+      include: {
+        model: db.Event
+      }
+    }).then(function (data) {
+      var individualProfile = {
+        firstName: data.first_name,
+        lastName: data.last_name,
+      }
+     res.render("newevent", { profileID: selectedProfile, individualProfile });  
+  })  
+    
   });
 
 
