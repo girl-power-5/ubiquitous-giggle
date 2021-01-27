@@ -6,7 +6,6 @@
   display: block !important;
 }
 
-
 h4 {
     text-align: center;
 }
@@ -16,7 +15,7 @@ h4 {
   transition: 0.7s;
  }
   
- /* Hover effect on projects, only on devices with pointer */
+ /* Hover effect on profiles, only on devices with pointer */
  @media(hover: hover) and
  (pointer: fine) {
   .card:hover{
@@ -24,19 +23,6 @@ h4 {
     opacity: 100%;
     transform: scale(1.1);
     border-radius: 2%;
-  }
-}
-
- @media (max-width: 992px) { 
-  .new_container {
-    width: 90%;
-  }
-  .profile-container {
-    width: 100%;
-  }
-  .sidebar {
-    border-left: none;
-    margin-left: 0.5em;
   }
 }
  
@@ -79,21 +65,6 @@ h4 {
   border-left: 1px solid #e6e6e6;
 }
 
-@media (max-width: 992px) { 
-  .new_container {
-    width: 90%;
-  }
-  .profile-container {
-    width: 100%;
-  }
-  .sidebar {
-    border-left: none;
-    margin-left: 0.5em;
-  }
-}
-
-
-
 /*new profile css*/
 * {
 
@@ -113,8 +84,6 @@ h4 {
    
   }
 
-  
-  
   /* Create two equal columns that floats next to each other */
 .column {
   float: left;
@@ -150,5 +119,25 @@ h1,h2 {
    text-align: center;
    margin-top: 25px
  }
+
+ @media (max-width: 992px) { 
+  .new_container {
+    width: 90%;
+  }
+  .profile-container {
+    width: 100%;
+  }
+
+  .sidebar {
+    border-left: none;
+    margin-left: 0.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .event_container {
+    width: 80%;
+  }
+}
 
  
