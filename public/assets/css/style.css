@@ -23,6 +23,9 @@ h4 {
   }
  }
  
+.navbar-collapse.in {
+  display: block !important;
+}
 
 .footer {
     text-align: center;
