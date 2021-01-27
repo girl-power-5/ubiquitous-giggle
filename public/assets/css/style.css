@@ -2,6 +2,10 @@
   position: sticky;
 }
 
+.navbar-collapse.in {
+  display: block !important;
+}
+
 
 h4 {
     text-align: center;
@@ -62,12 +66,27 @@ h4 {
   border-left: 1px solid #e6e6e6;
 }
 
+@media (max-width: 992px) { 
+  .new_container {
+    width: 90%;
+  }
+  .profile-container {
+    width: 100%;
+  }
+  .sidebar {
+    border-left: none;
+    margin-left: 0.5em;
+  }
+}
+
+
+
 /*new profile css*/
 * {
 
   padding: 3px;
 }
-.new_container, .profile-container {
+.new_container, .profile-container, .event_container {
   border-radius: 2em;
   border: 2px solid	rgb(208,208,208);
   background-color:rgb(255, 255, 255) ;

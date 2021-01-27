@@ -8,6 +8,24 @@ $(document).ready(function() {
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
 
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-center",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", function(event) {
     event.preventDefault();
@@ -17,8 +35,9 @@ $(document).ready(function() {
     };
 
     if (!userData.email || !userData.password) {
-      return;
-      toastr["error"]("The email and password were not found.   Please try again.  ", "Invalid Login")
+      toastr.error("You shall not pass with those credentials ", "ERROR ")
+
+     
     }
     // If we have an email and password we run the loginUser function and clear the form
     loginUser(userData.email, userData.password);
