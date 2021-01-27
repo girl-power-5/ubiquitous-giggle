@@ -25,7 +25,20 @@ h4 {
     transform: scale(1.1);
     border-radius: 2%;
   }
- }
+}
+
+ @media (max-width: 992px) { 
+  .new_container {
+    width: 90%;
+  }
+  .profile-container {
+    width: 100%;
+  }
+  .sidebar {
+    border-left: none;
+    margin-left: 0.5em;
+  }
+}
  
 .navbar-collapse.in {
   display: block !important;
