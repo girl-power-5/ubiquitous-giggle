@@ -27,18 +27,12 @@ module.exports = function (app) {
         firstName: data.first_name,
         lastName: data.last_name,
       }
-     res.render("newevent", { profileID: selectedProfile, individualProfile });  
+     res.render("newevent", { profileID: selectedProfile, individualProfile: individualProfile, userFirstName: req.user.first_name });  
   })  
-    
   });
-
 
   app.get("/newprofile", function (req, res) {
-    res.render("newprofile");
-  });
-
-  app.get("/editprofile", function (req, res) {
-    res.render("editprofile");
+    res.render("newprofile", {userFirstName: req.user.first_name});
   });
 
   // Route to get all of the user's profiles and render to their main page after logging in
@@ -71,7 +65,7 @@ module.exports = function (app) {
         }
       }
     };
-      res.render("dashboard", { profile: profileData, event: eventData })
+      res.render("dashboard", { profile: profileData, event: eventData, userFirstName: req.user.first_name })
 
     })
   });
@@ -113,15 +107,13 @@ module.exports = function (app) {
      
       for (let i = 0; i < data.Events.length; i++) {
         var date = new Date(data.Events[i].start_date)
-        console.log(data.Events[i])
         eventData[i] = {
           name: data.Events[i].name,
           date: flatpickr.formatDate(date, "F j, Y")
         };
       };
 
-     
-      res.render("view", { profile: individualProfile, event: eventData })
+      res.render("view", { profile: individualProfile, event: eventData, userFirstName: req.user.first_name })
     });
   });
 
@@ -155,9 +147,7 @@ module.exports = function (app) {
       var currentUser = data[0].UserId
       res.render("addresslist", {address: addressData, currentUser: currentUser})
       }
-      
-      console.log("DAATAAAA", addressData)
-      res.render("addresslist", {currentUser: req.user.id})
+        res.render("addresslist", {currentUser: req.user.id})
     })
   });
 
@@ -172,6 +162,7 @@ module.exports = function (app) {
   // otherwise send back an error
   app.post("/api/signup", function (req, res) {
     db.User.create({
+      first_name: req.body.userId,
       email: req.body.email,
       password: req.body.password
     })
@@ -206,7 +197,6 @@ module.exports = function (app) {
 
   // POST method for adding a new profile to a user's account/dashboard
   app.post("/api/newprofile", function (req, res) {
-    console.log("REQEUST ", req)
     db.Profile.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
