@@ -20,7 +20,11 @@
   </nav>
 </header>
 <h1>Hi, {{userFirstName}}!</h1>
+  
  <div class="event_container" style="background-color;">
+     {{!-- Alerts to ensure good user data --}}
+    <div class="alert alert-danger alert-dismissible fade show hide" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
+    </div>
       <h1 style=>{{individualProfile.firstName}} {{individualProfile.lastName}}</h1> 
       <h6>What type of event or upcoming celebration would you like to add?</h6>
       {{!-- Event options list --}}
@@ -47,8 +51,9 @@
 
       {{!-- Special occasions list --}}
       <div class="hide" id="list-of-occasions">
-        <h6>Select occasions celebrated:</h6>
+        <h6>Select occasion type*:</h6>
         <select name="special" id="special">
+          <option value=""></option>
           <option value="Wedding">Wedding</option>
           <option value="Engagement">Engagement</option>
           <option value="Divorce">Divorce</option>
@@ -62,7 +67,7 @@
 
       <br>
 
-      <label>Date</label>
+      <label>Date*</label>
       <input type="text" id="event-date" placeholder="Please select Date" data-input>
 
   <submit class="btn create-event-btn btn-secondary" data-id={{profileID}}>Add the event!</submit>

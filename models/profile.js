@@ -17,12 +17,20 @@ module.exports = function(sequelize, DataTypes) {
       },
       email: {
         type: DataTypes.STRING,
+        allowNull: true,
         validate: {
-          isEmail: true
+          invalidEmail(email) {
+            if(this.email) {
+              const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              if (re.test(String(email).toLowerCase()) === false) {
+                throw new Error("Invalid email address.")
+              }
+            }
+          }
         }
       },
       phone_number: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
       },
       address: {
         type: DataTypes.STRING
