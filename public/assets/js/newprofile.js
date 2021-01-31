@@ -102,6 +102,41 @@ $(document).ready(function() {
   // On submit, send the user input to the /api/newprofile route using a POST method
   profileForm.on("submit", function(event) {
     event.preventDefault();
+    
+    // Validation to ensure good user data
+    if (!firstName.val() || !lastName.val() || !relationship.val()) {
+      $(".alert").removeClass("hide");
+      $(".alert").text("Please complete all required fields.");
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    if(email.val()) {
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (re.test(String(email.val()).toLowerCase()) === false) {
+          $(".alert").removeClass("hide");
+          $(".alert").text("Please enter a valid email.");
+          window.scrollTo(0, 0);
+          return;
+        }
+    }
+
+    if(phoneNumber.val()) {
+        const re = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+        if (re.test(String(phoneNumber.val()).toLowerCase()) === false) {
+          $(".alert").removeClass("hide");
+          $(".alert").text("Please enter a valid phone number.");
+          window.scrollTo(0, 0);
+          return;
+        }
+    }
+    
+    if(address.val() &&( !city.val() || !state.val() || !zip.val())) {
+      $(".alert").removeClass("hide");
+      $(".alert").text("Please enter street, city, state, & zip, if including an address.");
+      window.scrollTo(0, 0);
+      return;
+    }
 
     // Capture the user input and trim off any white space
     var profileData = {

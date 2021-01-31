@@ -43,10 +43,10 @@ module.exports = function (app) {
         UserId: req.user.id      
       },
       include: db.Event
-
     }).then(function(data) {
-      var profileData = {}
-      var eventData = {}
+      var currentIndex = 0;
+      var profileData = {};
+      var eventData = {};
 
       for (let i = 0; i < data.length; i++) {
         profileData[i] = {
@@ -57,14 +57,19 @@ module.exports = function (app) {
         }
 
         if (data[i].Events.length !== 0) {
-          var date = new Date(data[i].Events[0].start_date)
-          eventData[i] = {
-              name: data[i].Events[0].name,
+          eventsByProfile = data[i].Events;
+          eventsByProfile.forEach((event) => {
+            var date = new Date(event.start_date)
+            eventData[currentIndex] = {
+              name: event.name,
               date: flatpickr.formatDate(date, "F j, Y"),
               firstName: data[i].first_name
-        }
-      }
+            };
+            currentIndex++;
+          });
+      };
     };
+
       res.render("dashboard", { profile: profileData, event: eventData, userFirstName: req.user.first_name })
 
     })
@@ -99,7 +104,7 @@ module.exports = function (app) {
         christmas: data.christmas,
         mothers_day: data.mothers_day,
         fathers_day: data.fathers_day,
-        hallowen: data.halloween,
+        halloween: data.halloween,
         id: selected
       }
 
@@ -152,7 +157,6 @@ module.exports = function (app) {
   });
 
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
-
     // Send back information about the user currently logged in
     res.json(req.user);
   });

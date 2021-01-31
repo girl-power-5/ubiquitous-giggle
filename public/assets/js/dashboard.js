@@ -13,7 +13,6 @@ $(document).ready(function () {
 
     // Capture which card was selected and grab the data-id which represents the profile id in the db
     var profileID = $(event.target).attr("data-id")
-    console.log('PROFILEID', profileID)
 
     // GET method to retrieve data associated with the selected profile and display to the page
     $.get("/view/" + profileID).then(function (res) {
@@ -61,12 +60,12 @@ $(document).ready(function () {
         date: "02-11"
       },
       {
-        name: "National Drink Wine Day",
-        date: "02-18"
-      },
-      {
         name: "Galentine's Day",
         date: "02-13"
+      },
+      {
+        name: "National Drink Wine Day",
+        date: "02-18"
       },
       {
         name: "National Margarita Day",
@@ -87,10 +86,6 @@ $(document).ready(function () {
       {
         name: "National Single Parent Day",
         date: "03-21"
-      },
-      {
-        name: "National Let's Laugh Day",
-        date: "03-19"
       },
       {
         name: "Waffle Day",
@@ -143,7 +138,6 @@ $(document).ready(function () {
   ]
 
   var displayedHolidays = hallmarkHolidays.filter(holiday => {
-    console.log(holiday.date)
     return ((holiday.date) > (shortDate) && holiday.date < shortDatePlusMonthFormatted)
   });
 

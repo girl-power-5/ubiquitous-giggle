@@ -31,21 +31,23 @@
 <form class="profile new_container">
   <div class="">
     <h1>Create Profile</h1>
+    {{!-- Alerts to ensure good user data --}}
+    <div class="alert alert-danger alert-dismissible fade show hide" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
+    </div>
     <!-- First Name Last Name -->
     <form class="profile">
 
-      <label class="first-name">First Name
+      <label class="first-name">First Name*
       </label>
       <input type="text" class="form-control first-name">
 
-
-      <label class="last-name">Last Name
+      <label class="last-name">Last Name*
       </label>
       <input type="text" class="form-control last-name">
 
       <br>
       <!-- Relationship -->
-      <label class="relationship">Relationship
+      <label class="relationship">Relationship*
       </label>
       <select name="relationship" id="relationship" class="form-control col-md-6">
         <option value=""></option>

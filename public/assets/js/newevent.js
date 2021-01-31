@@ -45,10 +45,29 @@ $(document).ready(function() {
     event.preventDefault();
 
     var profileID = createEventBtn.attr("data-id");
-
-    console.log(profileID)
     var eventDate = $("#event-date").val();
-    
+
+    if (!eventDate && !specialOccasionOptions.val()) {
+      $(".alert").removeClass("hide");
+      $(".alert").text("Please enter a special occasion type & event date.");
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    if (!specialOccasionOptions.val()) {
+      $(".alert").removeClass("hide");
+      $(".alert").text("Please select a special occasion type.");
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    if (!eventDate) {
+      $(".alert").removeClass("hide");
+      $(".alert").text("Please enter the event date.");
+      window.scrollTo(0, 0);
+      return;
+    }
+
     $.post("/api/newevent/" + profileID, {
       type: selected,
       name: eventName,
