@@ -38,7 +38,7 @@ Once cloned,create package.json using `npm init`. The "dependencies" used:
 * Express-session v1.17.1
 * Flatpickr v4.6.9
 * Mysql2 v2.2.5
-* Passport": v0.4.1
+* Passport v0.4.1
 * Passport-local v1.0.0
 * Pikaday v1.8.2
 * Sequelize v6.4.0
