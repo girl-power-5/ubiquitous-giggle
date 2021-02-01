@@ -41,19 +41,20 @@
             <h1 style=>{{profile.firstName}} {{profile.lastName}}</h1>
             <h6 class="d-flex justify-content-center"></i> {{profile.relationship}}</h6>
             {{#if profile.birthday}}
-             <p><i class="fas fa-2x  fa-birthday-cake"></i>{{profile.birthday}}</p>
+            <div class="row"></div>
+            <p><i class="fas fa-2x fa-birthday-cake pr-3"></i>{{profile.birthday}}</p>
             {{/if}}
             {{#if profile.email}}
-             <h6><i class="fas fa-2x fa-paper-plane"></i>{{profile.email}}</h6>  
+            <p><i class="fas fa-2x fa-envelope pr-3"></i></i>{{profile.email}}</p>  
             {{/if}}
             {{#if profile.phoneNumber}}
-            <p><i class="fas fa-2x fa-mobile-alt"></i> {{profile.phoneNumber}}</p>
+            <p><i class="fas fa-2x fa-mobile-alt pr-3"></i>{{profile.phoneNumber}}</p>
             {{/if}}
             {{#if profile.address}}
             <p><i class="fas fa-2x fa-map-marker-alt"></i>
               Address: {{profile.address}}
               <br>
-              Address 2: {{profile.address2}}
+              Address 2: {{profile.address_other}}
               <br>
               City: {{profile.city}}
               <br>
@@ -62,7 +63,7 @@
               Zip: {{profile.zip}}
             </p>
             {{/if}}
-            <p>Celebrates:</p>
+            <p><i class="fas fa-2x fa-gifts pr-3"></i>Celebrates:</p>
               <ul>
                 {{#if profile.valentines_day}}
                 <li>Valentine's Day</li>
@@ -81,7 +82,7 @@
                 {{/if}}
                 {{#if profile.halloween}}
                 <li>Halloween</li>
-                {{/if}}
+                {{/if}} 
               </ul>
           </div>
           <p data-id={{profile.id}} id="new-event-link">Add an upcoming event <a

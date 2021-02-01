@@ -88,16 +88,16 @@ $(document).ready(function () {
         date: "03-21"
       },
       {
+        name: "National Talk Like Shakespeare Day",
+        date: "03-23"
+      },
+      {
         name: "Waffle Day",
         date: "03-25"
       },
       {
         name: "Manatee Appreciation Day",
         date: "03-31"
-      },
-      {
-        name: "National Talk Like Shakespeare Day",
-        date: "03-23"
       },
       {
         name: "National Star Wars Day",

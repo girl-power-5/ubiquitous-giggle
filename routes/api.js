@@ -95,7 +95,7 @@ module.exports = function (app) {
         email: data.email,
         phoneNumber: data.phone_number,
         address: data.address,
-        address2: data.address2,
+        address_other: data.address_other,
         city: data.city,
         state: data.state,
         zip: data.zip,
